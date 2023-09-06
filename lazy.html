@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading com CSS</title>
+    <style>
+        .body{
+            background: red;
+        }
+
+        .container{
+            max-width: 1200px;
+        }
+
+        img.lazy {
+            display: block;
+            width: 100%;
+            height: auto;
+            background-color: #ea00ff;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Exemplo de Lazy Loading com CSS</h1>
+    <p>Role para baixo para ver as imagens sendo carregadas preguiçosamente.</p>
+
+    <div class="container">
+        <img class="lazy" src="imagem1.jpg" alt="Imagem 1" loading="lazy">
+        <img class="lazy" src="imagem1.jpg" alt="Imagem 2" loading="lazy">
+        <img class="lazy" src="imagem1.jpg" alt="Imagem 3" loading="lazy">
+        <img class="lazy" src="imagem1.jpg" alt="Imagem 4" loading="lazy">
+    </div>
+    
+</body>
+</html>
