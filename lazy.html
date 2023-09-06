@@ -4,34 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lazy Loading com CSS</title>
-    <style>
-        .body{
-            background: red;
-        }
-
-        .container{
-            max-width: 1200px;
-        }
-
-        img.lazy {
-            display: block;
-            width: 100%;
-            height: auto;
-            background-color: #ea00ff;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Exemplo de Lazy Loading com CSS</h1>
-    <p>Role para baixo para ver as imagens sendo carregadas preguiçosamente.</p>
+    <div class="header">
+        <h1>Example of Lazy Loading with CSS</h1>
+        <p>Scroll down to see images loading lazily.</p>
+    </div>
 
     <div class="container">
-        <img class="lazy" src="imagem1.jpg" alt="Imagem 1" loading="lazy">
-        <img class="lazy" src="imagem1.jpg" alt="Imagem 2" loading="lazy">
-        <img class="lazy" src="imagem1.jpg" alt="Imagem 3" loading="lazy">
-        <img class="lazy" src="imagem1.jpg" alt="Imagem 4" loading="lazy">
+        <div class="colunas">
+            <div class="coluna">
+                <img class="lazy" id="imagemDemorada" data-delayed-src="imagem1.jpg" alt="Imagem 1" loading="lazy">
+            </div>
+            <div class="coluna">
+                <img class="lazy" id="imagemDemorada2" data-delayed-src="imagem1.jpg" alt="Imagem 2" loading="lazy">
+            </div>
+        </div>
     </div>
-    
+
+    <script src="script.js"></script>
 </body>
 </html>

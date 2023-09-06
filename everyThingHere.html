@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lazy Loading com CSS</title>
+    <style>
+        .header{
+            margin: 0 auto;
+            max-width: 1200px; 
+        }
+
+        .container{
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        .colunas{
+            display: flex;
+        }
+
+        .coluna{
+            width: 500px;
+            max-height: 600px;
+            margin-right: 20px; 
+        }
+
+        img.lazy {
+            display: block;
+            width: 100%;
+            height: 600px;
+            animation: fadeBackground 1s infinite alternate;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeBackground {
+            from { background-color: #ff0000; }
+            to { background-color: #fffb00; }
+        }
+                    
+
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Example of Lazy Loading with CSS</h1>
+        <p>Scroll down to see images loading lazily.</p>
+    </div>
+
+
+    <div class="container">
+        <div class="colunas">
+            <div class="coluna">
+                <img class="lazy" id="imagemDemorada" data-delayed-src="imagem1.jpg" alt="Imagem 1" loading="lazy">
+            </div>
+            <div class="coluna">
+                <img class="lazy" id="imagemDemorada2" data-delayed-src="imagem1.jpg" alt="Imagem 2" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('imagemDemorada').setAttribute('src', document.getElementById('imagemDemorada').getAttribute('data-delayed-src'));
+        }, 2000);
+
+        setTimeout(function() {
+            document.getElementById('imagemDemorada2').setAttribute('src', document.getElementById('imagemDemorada2').getAttribute('data-delayed-src'));
+        }, 4000);
+    </script>
+
+</body>
+</html>
